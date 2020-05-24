@@ -25,22 +25,17 @@ namespace FirstMod.Items
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
 			item.value = 10000;
-			item.rare = 2;
+			item.rare = ItemRarityID.Cyan;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.shoot = ModContent.ProjectileType<MyProjectile>();
 			item.shootSpeed = 3.0f;
 		}
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-			Projectile.NewProjectile(player.position, new Vector2(speedX, speedY), type, damage, knockBack);
-            return false;
-        }
-
         public override void HoldItem(Player player)
         {
             base.HoldItem(player);
+            player.statLifeMax2 += 300;
         }
 
         public override void AddRecipes()
