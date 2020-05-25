@@ -1,5 +1,4 @@
 using FirstMod.Projectiles;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -34,8 +33,9 @@ namespace FirstMod.Items
 
         public override void HoldItem(Player player)
         {
-            base.HoldItem(player);
             player.statLifeMax2 += 300;
+            player.noFallDmg = true;
+			player.GetModPlayer<EpicPlayer>().epicHero = true;
         }
 
         public override void AddRecipes()

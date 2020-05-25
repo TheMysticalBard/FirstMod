@@ -1,7 +1,6 @@
 ﻿using Terraria.ModLoader;
 using Terraria;
 using Main = Terraria.Main;
-using System;
 using Microsoft.Xna.Framework;
 
 namespace FirstMod.Projectiles
